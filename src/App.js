@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
@@ -53,13 +53,22 @@ function App() {
             Terms and Conditions
           </Link>
         </header>
-        <Switch>
-          <Route path="/terms" component={Terms} />
-          <Route path="/" exact>
+        <Routes>
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/" element={
             <div>
+              <h1>Welcome to My React App</h1>
+              <a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn React
+              </a>
             </div>
-          </Route>
-        </Switch>
+          } />
+        </Routes>
       </div>
     </Router>
   );
